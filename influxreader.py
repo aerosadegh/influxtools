@@ -21,8 +21,8 @@ class Database:
         self.client.switch_database(self.database)
         
     def switch_database(self, database):
+        self.client.switch_database(database)
         self.database = database
-        self.client.switch_database(self.database)
 
     def seeder(self, measurement, timestamp=None, Err_raise=False, verbose=False, epoch="s"):
         """timestamp: int number in second resolution"""
