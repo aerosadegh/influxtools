@@ -1,7 +1,7 @@
 from influxdb import InfluxDBClient, DataFrameClient
 import time
 
-# release Date: 21-10-98
+# release Date: 98-10-21
 __version__ = 0.2
 
 class Database:
@@ -11,7 +11,7 @@ class Database:
         self.database = database
         self.username = username
         self.password = password
-        self.sleep_sec = sleep      #sleep 5 sec between each query
+        self.sleep_sec = sleep      # sleep 5 sec between each query
         self.client = None
         self.timeout = timeout      # timeout for seeder if data not exist 
         

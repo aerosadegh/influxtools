@@ -145,7 +145,7 @@ CREATE DATABASE {database}
     if filename:
         newline = None
         if os.name == "nt":
-            newline="\n"
+            newline = "\n"
         with open(filename, "w", newline=newline) as f:
             res = f.write(line)
         #ans = input("Are You Sure To WRITE DATA?[y/n]: ")
