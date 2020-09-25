@@ -55,10 +55,13 @@ def timestamp2str(timestamp):
     return datetime.fromtimestamp(timestamp).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def read_influx(measurement):
-    print("Get all Data...")
-    df = q2df(client.query(f"select * from {measurement}"))
-
+def read_influx(measurement, query="select * from {measuremet}"):
+    if  query!="select * from {measuremet}":
+        df = q2df(client.query(query))
+    else:    
+        print("Get all Data...")
+        df = q2df(client.query(f"select * from {measurement}"))
+        
     print("Convert & Create Timestamp...")
     df["timestamp"] = df["time"].apply(str2timestanp)
     return df
